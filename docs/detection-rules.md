@@ -16,7 +16,6 @@ The rules were designed to detect individual events and correlate multiple event
 | 100011  | Successful SSH compromise         | SSH / sshd      |    12 |
 | 100012  | Port scanning / Nmap activity     | Web log         |     7 |
 | 100013  | Privilege escalation through sudo | sudo            |    13 |
-| 100014  | Full attack-chain correlation     | Multiple events |    15 |
 
 The project-specific rules use the `100000–119999` range to separate them from the default Wazuh rule set.
 
@@ -85,30 +84,6 @@ Level 13 alert
 ```
 
 The higher severity reflects the potential impact of successful privilege escalation.
-
----
-
-## Rule 100014 — Attack Chain Correlation
-
-**Purpose:** Correlate multiple attack stages into a single higher-level security event.
-
-The correlation logic combines:
-
-```text
-Reconnaissance
-      +
-SSH Brute Force
-      +
-Successful SSH Login
-      +
-Privilege Escalation
-      ↓
-Full Attack Chain
-      ↓
-Level 15 Alert
-```
-
-The attack-chain correlation uses a defined time window to associate related events.
 
 ---
 

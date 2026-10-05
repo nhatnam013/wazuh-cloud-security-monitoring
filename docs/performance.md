@@ -95,6 +95,8 @@ The observed false positive was associated with a legitimate AWS CloudTrail `Con
 | Average Alert Latency | 3.33 seconds |
 | False Positive Rate   |        0.93% |
 
+![Wazuh Dashboard](../screenshots/wazuh-dashboard.png)
+
 ---
 
 ## 5. Interpretation

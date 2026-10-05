@@ -36,6 +36,7 @@ Multiple failed SSH authentication attempts
 The rule is designed to identify abnormal authentication activity rather than relying on a single failed login.
 
 ---
+![Custom Wazuh Detection Rules 100010](../screenshots/Rule_100010.png)
 
 ## Rule 100011 — Successful SSH Compromise
 
@@ -54,6 +55,7 @@ Level 12 alert
 This correlation increases the significance of the successful authentication event.
 
 ---
+![Custom Wazuh Detection Rules 100011](../screenshots/Rule_100011.png)
 
 ## Rule 100012 — Port Scanning
 
@@ -70,6 +72,7 @@ Level 7 alert
 This rule provides visibility into the reconnaissance stage before authentication attacks occur.
 
 ---
+![Custom Wazuh Detection Rules 100012](../screenshots/Rule_100012.png)
 
 ## Rule 100013 — Privilege Escalation
 
@@ -86,7 +89,7 @@ Level 13 alert
 The higher severity reflects the potential impact of successful privilege escalation.
 
 ---
-
+![Custom Wazuh Detection Rules 100013](../screenshots/Rule_100013.png)
 ## Detection Logic
 
 The detection workflow can be summarized as:

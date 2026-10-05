@@ -50,6 +50,8 @@ Alert latency measures the time between the simulated attack event and the corre
 | SSH Brute Force #2   | 18:08:17    | 18:08:22   | 5 seconds |
 | SSH Successful Login | 18:10:23    | 18:10:24   |  1 second |
 
+![Threating Events](../screenshots/attack-detection.png)
+
 ### Average
 
 ```text

@@ -4,7 +4,7 @@
 
 Custom Wazuh rules were developed to detect the attack behaviors generated during the controlled security simulations.
 
-The rules were designed to detect individual events and correlate multiple events into a higher-level attack sequence.
+The rules were designed to detect individual events and to correlate related events (successful login after brute force, privilege escalation after a successful login).
 
 ---
 
@@ -129,11 +129,11 @@ The goal was to maintain sufficient sensitivity for the simulated attacks while 
 
 ## Detection Result
 
-The five defined attack behaviors in the benchmark were successfully detected.
+The four defined attack behaviors in the benchmark were successfully detected.
 
 ```text
-Expected detections: 5
-Detected:            5
+Expected detections: 4
+Detected:            4
 
 Detection Rate:      100%
 ```

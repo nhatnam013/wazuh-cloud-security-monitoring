@@ -14,8 +14,6 @@ Initial Access
 Successful Authentication
       ↓
 Privilege Escalation
-      ↓
-Attack Chain Correlation
 ```
 
 All activities were performed against authorized laboratory systems.
@@ -74,31 +72,14 @@ A dedicated detection rule was used to identify the privilege escalation event.
 
 ---
 
-## 5. Attack Chain Correlation
-
-The individual events were combined to identify the complete attack sequence.
-
-```text
-Nmap Reconnaissance
-        │
-        ▼
-SSH Brute Force
-        │
-        ▼
-Successful SSH Login
-        │
-        ▼
-Privilege Escalation
-        │
-        ▼
-Full Attack Chain
+```
 ```
 
 The correlation rule provides a higher-severity alert when multiple stages of the simulated attack occur within the defined correlation window.
 
 ---
 
-## 6. Detection Validation
+## 5. Detection Validation
 
 Each attack stage was mapped to an expected detection event.
 
@@ -108,13 +89,12 @@ Each attack stage was mapped to an expected detection event.
 | SSH brute force       | Multiple failed SSH logins               |
 | Successful SSH access | Successful authentication after failures |
 | Privilege escalation  | Suspicious sudo activity                 |
-| Complete attack chain | Correlated multi-stage attack            |
 
 The simulations successfully generated the expected security events used for rule validation.
 
 ---
 
-## 7. Purple Team Approach
+## 6. Purple Team Approach
 
 The attack simulations were not performed only to demonstrate offensive techniques.
 

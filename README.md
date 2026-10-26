@@ -148,7 +148,6 @@ Five custom Wazuh rules were developed for the lab environment.
 | 100011  | Successful SSH compromise         |    12 |
 | 100012  | Port scanning / Nmap activity     |     7 |
 | 100013  | Privilege escalation through sudo |    13 |
-| 100014  | Full attack-chain correlation     |    15 |
 
 The custom rule IDs use the `100000–119999` range to keep the project-specific rules separated from the default Wazuh rule set.
 

@@ -6,7 +6,7 @@ This project focuses on building and evaluating an open-source **Cloud Security 
 
 The lab environment was designed to centralize security telemetry, monitor cloud workloads, detect suspicious activities, and investigate attack behavior through security alerts and dashboards.
 
-The project also includes controlled attack simulations using **Nmap** and **Hydra**, custom Wazuh detection rules, attack-chain correlation, and quantitative evaluation of detection performance.
+The project also includes controlled attack simulations using **Nmap** and **Hydra**, custom Wazuh detection rules, and quantitative evaluation of detection performance.
 
 ---
 
@@ -116,31 +116,15 @@ A successful SSH authentication event was used to validate detection of a succes
 
 A controlled privilege escalation scenario using `sudo` was performed to generate and validate privilege escalation events.
 
-### 5. Attack Chain Correlation
-
-The individual events were correlated to identify the broader attack sequence.
-
 ```text
-Reconnaissance
-      │
-      ▼
-SSH Brute Force
-      │
-      ▼
-Successful SSH Login
-      │
-      ▼
-Privilege Escalation
-      │
-      ▼
-Attack Chain Correlation
+   Reconnaissance → SSH Brute Force → Successful SSH Login → Privilege Escalation
 ```
 
 ---
 
 ## Custom Detection Rules
 
-Five custom Wazuh rules were developed for the lab environment.
+Four custom Wazuh rules were developed for the lab environment.
 
 | Rule ID | Detection                         | Level |
 | ------- | --------------------------------- | ----: |
@@ -157,7 +141,7 @@ The brute-force detection correlates multiple failed SSH authentication attempts
 
 The successful brute-force rule is triggered when repeated failed logins are followed by a successful login.
 
-The attack-chain rule correlates multiple attack stages within a larger time window to provide a higher-level view of the incident.
+The privilege escalation rule is triggered when sudo activity follows a successful-compromise alert (rule 100011) on the same host.
 
 ---
 
@@ -192,9 +176,9 @@ The detection capability was evaluated using controlled attack scenarios.
 
 ### Detection Rate
 
-The tested attack sequence contained five expected attack behaviors, all of which were successfully detected.
+The tested attack sequence contained four expected attack behaviors, all of which were successfully detected.
 
-**Detection Rate: 5/5 = 100%**
+**Detection Rate: 4/4 = 100%**
 
 This result applies specifically to the controlled scenarios tested in this project.
 
@@ -236,7 +220,6 @@ My main responsibilities in this project included:
 * Developing custom Wazuh detection rules.
 * Tuning detection logic and correlation conditions.
 * Validating detection of individual attack stages.
-* Validating the complete attack-chain correlation.
 * Supporting quantitative evaluation of detection performance.
 
 The work followed a **Purple Team approach**, combining offensive attack simulation with defensive detection engineering.
@@ -273,7 +256,7 @@ Detection Rules
       ↓
 Alert Generation
       ↓
-Attack Correlation
+Event Correlation
       ↓
 Security Investigation
       ↓

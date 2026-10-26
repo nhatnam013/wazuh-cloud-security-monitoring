@@ -23,10 +23,10 @@ Detection Rate = True Positives / Total Actual Attacks × 100
 For the tested attack sequence:
 
 ```text
-Expected attack behaviors: 5
-Successfully detected:     5
+Expected attack behaviors: 4
+Successfully detected:     4
 
-Detection Rate = 5 / 5 × 100
+Detection Rate = 4 / 4 × 100
                = 100%
 ```
 
@@ -34,7 +34,7 @@ Detection Rate = 5 / 5 × 100
 
 **Detection Rate: 100%**
 
-The result is limited to the five attack behaviors implemented and tested in this laboratory.
+The result is limited to the four attack behaviors implemented and tested in this laboratory.
 
 ---
 
